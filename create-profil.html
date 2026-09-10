@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer mon Profil | CollaBiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style> 
+        body { font-family: 'Plus Jakarta Sans', sans-serif; } 
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 flex justify-center items-center">
+
+    <div class="max-w-2xl w-full bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+        
+        <!-- Header -->
+        <div class="text-center space-y-2 mb-8">
+            <div class="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-semibold px-3 py-1 rounded-full text-xs mb-2">
+                Étape 2 sur 2 • Configuration du profil
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Configurez votre Page Bio</h1>
+            <p class="text-slate-400 text-sm">Ces informations seront visibles par les marques et agences sur votre lien personnalisé.</p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('Profil créé avec succès !'); window.location.href='dashboard.html';" class="space-y-6">
+            
+            <!-- Photo Upload Section -->
+            <div class="flex flex-col sm:flex-row items-center gap-6 p-4 bg-slate-950/60 border border-slate-800/80 rounded-2xl">
+                <div class="relative w-24 h-24 flex-shrink-0">
+                    <div id="avatar-preview" class="w-full h-full rounded-full bg-slate-800 border-2 border-dashed border-slate-700 flex flex-col items-center justify-center text-slate-500 overflow-hidden">
+                        <span class="text-2xl">📷</span>
+                        <span class="text-[10px] text-slate-400 mt-1">Photo</span>
+                    </div>
+                </div>
+                <div class="space-y-2 text-center sm:text-left">
+                    <label class="block text-xs font-semibold uppercase text-slate-400">Photo de profil *</label>
+                    <div class="flex flex-wrap gap-2 justify-center sm:justify-start">
+                        <label class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-4 py-2 rounded-xl cursor-pointer transition shadow-md shadow-indigo-600/20">
+                            Choisir une image
+                            <input type="file" accept="image/*" class="hidden" onchange="previewImage(event)">
+                        </label>
+                    </div>
+                    <p class="text-[11px] text-slate-500">Formats acceptés : JPG, PNG. Taille max 5Mo.</p>
+                </div>
+            </div>
+
+            <!-- Identity Fields -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Nom public ou Pseudo *</label>
+                    <input type="text" id="input-name" required placeholder="ex. Amina El Amrani" oninput="updateLink()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Niche / Domaine *</label>
+                    <select required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="">Sélectionnez un domaine...</option>
+                        <option>✨ Mode & Lifestyle</option>
+                        <option>💄 Beauté & Cosmetique</option>
+                        <option>✈️ Voyage & Lifestyle</option>
+                        <option>🍔 Food & Gastronomie</option>
+                        <option>🏋️ Fitness & Santé</option>
+                        <option>🎮 Gaming & Tech</option>
+                        <option>💼 Business & Éducation</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Location & Bio -->
+            <div class="grid grid-cols-1 gap-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Ville / Pays de résidence *</label>
+                    <input type="text" required placeholder="ex. Casablanca, Maroc" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Bio / Présentation courte *</label>
+                    <textarea rows="3" required placeholder="Ex. Créatrice de contenu passionnée par la mode éthique. Disponible pour collaborations, événements et présentations de produits." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                </div>
+            </div>
+
+            <!-- Custom URL Preview Box -->
+            <div class="bg-indigo-950/30 border border-indigo-500/20 p-4 rounded-2xl flex items-center justify-between">
+                <div>
+                    <span class="block text-[11px] font-semibold text-indigo-400 uppercase">Aperçu de votre lien personnalisé :</span>
+                    <span id="url-preview" class="font-mono text-sm font-bold text-white">collabiz.bio/votre-nom</span>
+                </div>
+                <span class="text-xs bg-indigo-500/20 text-indigo-300 font-bold px-2.5 py-1 rounded-lg">Actif</span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-indigo-600/25 transition text-sm">
+                Enregistrer & Publier ma Page 🚀
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Scripts for Dynamic Preview -->
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('avatar-preview');
+                output.style.backgroundImage = `url('${reader.result}')`;
+                output.style.backgroundSize = 'cover';
+                output.style.backgroundPosition = 'center';
+                output.innerHTML = '';
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function updateLink() {
+            const name = document.getElementById('input-name').value;
+            const preview = document.getElementById('url-preview');
+            if (name.trim() !== '') {
+                const slug = name.toLowerCase().replace(/[^a-z0-9]/g, '');
+                preview.textContent = `collabiz.bio/${slug}`;
+            } else {
+                preview.textContent = 'collabiz.bio/votre-nom';
+            }
+        }
+    </script>
+
+</body>
+</html>
