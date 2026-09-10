@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Demandes | CollaBiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style> 
+        body { font-family: 'Plus Jakarta Sans', sans-serif; } 
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+    <!-- Header (Light Theme) -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center font-black text-white text-lg shadow-md shadow-indigo-600/20">C</div>
+                <span class="text-xl font-extrabold text-slate-900 tracking-tight">CollaBiz<span class="text-indigo-600">.bio</span></span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="dashboard.html" class="text-xs font-bold text-slate-500 hover:text-indigo-600 transition">Mode Sombre 🌙</a>
+                <div class="w-9 h-9 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center font-bold text-indigo-600">A</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-8 space-y-6">
+
+        <!-- Page Title & Stats -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <h1 class="text-2xl font-extrabold text-slate-900">Gestion des Demandes</h1>
+                <p class="text-slate-500 text-sm mt-0.5">Suivez, filtrez et gérez toutes vos opportunités reçues.</p>
+            </div>
+            
+            <!-- Quick Counters -->
+            <div class="flex gap-3">
+                <div class="bg-white border border-slate-200 px-4 py-2 rounded-xl shadow-sm">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Nouvelles</span>
+                    <span class="text-lg font-black text-indigo-600">4 En attente</span>
+                </div>
+                <div class="bg-white border border-slate-200 px-4 py-2 rounded-xl shadow-sm">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Confirmées</span>
+                    <span class="text-lg font-black text-emerald-600">12 Acceptées</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm flex flex-wrap justify-between items-center gap-4">
+            <div class="flex gap-2">
+                <button onclick="filterStatus('all')" id="tab-all" class="px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-sm transition">Toutes les demandes</button>
+                <button onclick="filterStatus('new')" id="tab-new" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition">✨ Nouvelles (4)</button>
+                <button onclick="filterStatus('accepted')" id="tab-accepted" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition">✅ Acceptées (12)</button>
+            </div>
+            <div class="flex gap-2">
+                <select class="bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-3 py-2 rounded-xl focus:outline-none">
+                    <option>Tous les types</option>
+                    <option>💼 Partenariats</option>
+                    <option>🎉 Invitations</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Requests List Table -->
+        <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50/80 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                            <th class="p-4">Type</th>
+                            <th class="p-4">Marque / Organisateur</th>
+                            <th class="p-4">Détails / Budget / Date</th>
+                            <th class="p-4">Statut</th>
+                            <th class="p-4 text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        
+                        <!-- Row 1: New Collab -->
+                        <tr class="item-row status-new hover:bg-slate-50/50 transition">
+                            <td class="p-4">
+                                <span class="inline-flex items-center gap-1.5 bg-indigo-50 text-indigo-700 border border-indigo-200 px-2.5 py-1 rounded-lg text-xs font-bold">
+                                    💼 Collab Rémunérée
+                                </span>
+                            </td>
+                            <td class="p-4 font-bold text-slate-900">
+                                L'Oréal Paris
+                                <span class="block text-xs font-normal text-slate-500">contact@loreal.com</span>
+                            </td>
+                            <td class="p-4">
+                                <span class="font-bold text-slate-800">8,000 MAD</span>
+                                <span class="block text-xs text-slate-500">Campagne Reel + 2 Stories</span>
+                            </td>
+                            <td class="p-4">
+                                <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 border border-amber-200 px-2.5 py-0.5 rounded-full text-xs font-bold">
+                                    En attente
+                                </span>
+                            </td>
+                            <td class="p-4 text-right space-x-2">
+                                <button onclick="alert('Demande acceptée !')" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-1.5 rounded-lg text-xs shadow-sm transition">Accepter</button>
+                                <button class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-3 py-1.5 rounded-lg text-xs transition">Refuser</button>
+                            </td>
+                        </tr>
+
+                        <!-- Row 2: New Event -->
+                        <tr class="item-row status-new hover:bg-slate-50/50 transition">
+                            <td class="p-4">
+                                <span class="inline-flex items-center gap-1.5 bg-pink-50 text-pink-700 border border-pink-200 px-2.5 py-1 rounded-lg text-xs font-bold">
+                                    🎉 Invitation Événement
+                                </span>
+                            </td>
+                            <td class="p-4 font-bold text-slate-900">
+                                Sephora Morocco
+                                <span class="block text-xs font-normal text-slate-500">event@sephora.ma</span>
+                            </td>
+                            <td class="p-4">
+                                <span class="font-bold text-slate-800">20 Octobre • 18:00</span>
+                                <span class="block text-xs text-slate-500">Lancement VIP Casablanca</span>
+                            </td>
+                            <td class="p-4">
+                                <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 border border-amber-200 px-2.5 py-0.5 rounded-full text-xs font-bold">
+                                    En attente
+                                </span>
+                            </td>
+                            <td class="p-4 text-right space-x-2">
+                                <button onclick="alert('Invitation acceptée !')" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-1.5 rounded-lg text-xs shadow-sm transition">Accepter</button>
+                                <button class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-3 py-1.5 rounded-lg text-xs transition">Refuser</button>
+                            </td>
+                        </tr>
+
+                        <!-- Row 3: Accepted Request -->
+                        <tr class="item-row status-accepted hover:bg-slate-50/50 transition bg-emerald-50/20">
+                            <td class="p-4">
+                                <span class="inline-flex items-center gap-1.5 bg-indigo-50 text-indigo-700 border border-indigo-200 px-2.5 py-1 rounded-lg text-xs font-bold">
+                                    💼 Collab Rémunérée
+                                </span>
+                            </td>
+                            <td class="p-4 font-bold text-slate-900">
+                                Zara Fashion
+                                <span class="block text-xs font-normal text-slate-500">pr@zara.com</span>
+                            </td>
+                            <td class="p-4">
+                                <span class="font-bold text-slate-800">12,000 MAD</span>
+                                <span class="block text-xs text-slate-500">Collection Automne</span>
+                            </td>
+                            <td class="p-4">
+                                <span class="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-full text-xs font-bold">
+                                    ✓ Acceptée
+                                </span>
+                            </td>
+                            <td class="p-4 text-right">
+                                <button class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-3 py-1.5 rounded-lg text-xs transition">Voir la discussion</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Filter Script -->
+    <script>
+        function filterStatus(status) {
+            const rows = document.querySelectorAll('.item-row');
+            
+            // Update Active Buttons UI
+            document.querySelectorAll('[id^="tab-"]').forEach(btn => {
+                btn.className = "px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition";
+            });
+
+            if (status === 'all') {
+                document.getElementById('tab-all').className = "px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-sm transition";
+                rows.forEach(r => r.style.display = '');
+            } else if (status === 'new') {
+                document.getElementById('tab-new').className = "px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-sm transition";
+                rows.forEach(r => r.classList.contains('status-new') ? r.style.display = '' : r.style.display = 'none');
+            } else if (status === 'accepted') {
+                document.getElementById('tab-accepted').className = "px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-sm transition";
+                rows.forEach(r => r.classList.contains('status-accepted') ? r.style.display = '' : r.style.display = 'none');
+            }
+        }
+    </script>
+
+</body>
+</html>
