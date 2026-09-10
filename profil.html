@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de Collaboration | Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style> 
+        body { font-family: 'Plus Jakarta Sans', sans-serif; } 
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 flex justify-center items-center">
+
+    <div class="max-w-xl w-full bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+        
+        <!-- Profile Section -->
+        <div class="text-center space-y-3 mb-8">
+            <div class="relative w-28 h-28 mx-auto">
+                <!-- Large Avatar Placeholder -->
+                <div class="w-full h-full rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 p-1 shadow-xl">
+                    <div class="w-full h-full bg-slate-950 rounded-full flex items-center justify-center font-black text-3xl text-indigo-400">
+                        A
+                    </div>
+                </div>
+                <span class="absolute bottom-1 right-1 w-5 h-5 bg-emerald-500 border-2 border-slate-900 rounded-full" title="Disponible pour collaborations"></span>
+            </div>
+            
+            <h1 class="text-2xl font-extrabold text-white tracking-tight">Amina El Amrani</h1>
+            <span class="inline-block bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold px-3 py-1 rounded-full">
+                ✨ Mode & Fashion Creator
+            </span>
+            <p class="text-slate-400 text-sm max-w-md mx-auto leading-relaxed pt-1">
+                Créatrice de contenu basée à Casablanca. Disponible pour les partenariats de marques, shootings et événements exclusifs.
+            </p>
+        </div>
+
+        <!-- Form Type Selector Tabs -->
+        <div class="bg-slate-950 p-1.5 rounded-2xl border border-slate-800 grid grid-cols-2 gap-2 mb-6">
+            <button id="btn-collab" onclick="switchForm('collab')" class="py-2.5 px-4 rounded-xl text-xs font-bold transition bg-indigo-600 text-white shadow-md">
+                💼 Partenariat / Collab
+            </button>
+            <button id="btn-event" onclick="switchForm('event')" class="py-2.5 px-4 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white">
+                🎉 Invitation Événement
+            </button>
+        </div>
+
+        <!-- Form -->
+        <form onsubmit="event.preventDefault(); alert('Votre demande a été transmise avec succès !');" class="space-y-4">
+            
+            <!-- Common Fields -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Marque / Agence *</label>
+                    <input type="text" required placeholder="ex. Zara, Sephora..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">E-mail de contact *</label>
+                    <input type="email" required placeholder="contact@marque.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+            </div>
+
+            <!-- COLLAB FIELDS (Default) -->
+            <div id="collab-fields" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Type de Collaboration *</label>
+                        <select class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option>Reels Instagram</option>
+                            <option>Video TikTok</option>
+                            <option>Stories Pack</option>
+                            <option>Gifting / Unboxing</option>
+                            <option>Ambassadrice (Long terme)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Budget Estimé (MAD) *</label>
+                        <input type="text" placeholder="ex. 5,000 DH" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVENT FIELDS (Hidden by default) -->
+            <div id="event-fields" class="space-y-4 hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Date & Heure *</label>
+                        <input type="datetime-local" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Lieu / Ville *</label>
+                        <input type="text" placeholder="ex. Casablanca, Hôtel X" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details Textarea -->
+            <div>
+                <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Détails du projet ou Message *</label>
+                <textarea rows="3" required placeholder="Expliquez brièvement le concept, les attentes ou les détails importants..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            </div>
+
+            <!-- File Upload Input -->
+            <div>
+                <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Pièce jointe / Document (Optionnel)</label>
+                <div class="relative border border-dashed border-slate-700 bg-slate-950/50 hover:bg-slate-950 transition rounded-xl p-4 text-center cursor-pointer">
+                    <input type="file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                    <div class="space-y-1">
+                        <span class="text-xl">📎</span>
+                        <p class="text-xs text-slate-400">Joindre un brief, invitation PDF ou image</p>
+                        <p class="text-[10px] text-slate-500">PNG, JPG, PDF jusqu'à 10MB</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-indigo-600/25 transition text-sm pt-3">
+                Envoyer la Demande 🚀
+            </button>
+        </form>
+
+        <!-- Footer Branding -->
+        <div class="mt-6 pt-4 border-t border-slate-800/60 text-center">
+            <p class="text-xs text-slate-500">Propulsé par <a href="index.html" class="font-bold text-slate-400 hover:text-indigo-400">CollaBiz.bio</a></p>
+        </div>
+
+    </div>
+
+    <!-- Tab Switching Script -->
+    <script>
+        function switchForm(type) {
+            const collabFields = document.getElementById('collab-fields');
+            const eventFields = document.getElementById('event-fields');
+            const btnCollab = document.getElementById('btn-collab');
+            const btnEvent = document.getElementById('btn-event');
+
+            if (type === 'collab') {
+                collabFields.classList.remove('hidden');
+                eventFields.classList.add('hidden');
+                btnCollab.className = 'py-2.5 px-4 rounded-xl text-xs font-bold transition bg-indigo-600 text-white shadow-md';
+                btnEvent.className = 'py-2.5 px-4 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white';
+            } else {
+                eventFields.classList.remove('hidden');
+                collabFields.classList.add('hidden');
+                btnEvent.className = 'py-2.5 px-4 rounded-xl text-xs font-bold transition bg-indigo-600 text-white shadow-md';
+                btnCollab.className = 'py-2.5 px-4 rounded-xl text-xs font-bold transition text-slate-400 hover:text-white';
+            }
+        }
+    </script>
+
+</body>
+</html>
