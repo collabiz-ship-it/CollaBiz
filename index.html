@@ -3,35 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CollaBiz | HQ Digital pour Créateurs</title>
+    <title>CollaBiz | L'HQ Digital des Créateurs & Influenceurs</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style> 
         body { font-family: 'Plus Jakarta Sans', sans-serif; } 
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-purple-600 selection:text-white">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-purple-500 selection:text-white">
 
     <!-- Header / Navbar -->
     <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-3">
-                <!-- Zone réservée au Logo C (Ajoutez votre <img> ici si besoin) -->
-                <div class="w-10 h-10 rounded-xl border-2 border-dashed border-purple-500 flex items-center justify-center font-black text-purple-400 text-xl overflow-hidden bg-purple-950/30">
-                    <!-- <img src="votre-logo.png" alt="C" class="w-full h-full object-contain"> -->
+            <a href="#" class="flex items-center gap-2">
+                <!-- مكان اللوجو C -->
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 to-purple-400 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-purple-500/20 overflow-hidden">
+                    <!-- <img src="logo.png" alt="C" class="w-full h-full object-contain"> -->
                     C
                 </div>
                 <span class="text-2xl font-black tracking-tight text-white">Colla<span class="text-purple-500">Biz</span></span>
             </a>
+            <!-- تم إزالة FAQ من القائمة العلوية -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-400">
                 <a href="#features" class="hover:text-white transition">Avantages</a>
+                <a href="#how-it-works" class="hover:text-white transition">Comment ça marche ?</a>
                 <a href="#previews" class="hover:text-white transition">Aperçu</a>
-                <a href="#faq" class="hover:text-white transition">FAQ</a>
             </nav>
             <div class="flex items-center gap-4">
                 <a href="dashboard.html" class="text-sm font-semibold text-slate-300 hover:text-white transition hidden sm:block">Se connecter</a>
-                <a href="#register" class="bg-purple-600 hover:bg-purple-500 text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-purple-600/30 transition">
-                    Essai gratuit
+                <a href="#register" class="bg-purple-600 hover:bg-purple-500 text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-purple-600/30 transition border border-purple-500/30">
+                    14 jours gratuits
                 </a>
             </div>
         </div>
@@ -39,109 +40,175 @@
 
     <!-- Hero Section -->
     <section class="max-w-7xl mx-auto px-6 pt-20 pb-16 text-center">
-        <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-300 font-semibold px-4 py-1.5 rounded-full text-xs mb-8">
+        <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 text-purple-400 font-semibold px-4 py-1.5 rounded-full text-xs mb-8">
             <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
-            ✨ 14 jours d'essai gratuit sans engagement
+            L'outil ultime pour Creator-Entrepreneurs (14 jours gratuits)
         </div>
         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] max-w-4xl mx-auto">
-            Gérez vos partenariats avec <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-fuchsia-400 to-purple-200">CollaBiz</span>
+            Transformez vos DMs en un <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400">Bureau d'Affaires Pro</span>
         </h1>
         <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mt-6 leading-relaxed">
-            Centralisez vos demandes de collaborations, invitations et propositions de marques au même endroit.
+            Fini le chaos des e-mails perdus et des DMs noyés. Centralisez vos demandes de partenariats, invitations à des événements et placements de produits dans un lien bio ultra-professionnel.
         </p>
-    </section>
-
-    <!-- Inscription & Formulaires -->
-    <section id="register" class="max-w-xl mx-auto px-6 mb-20">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <h2 class="text-2xl font-bold text-center text-white mb-6">Créer votre compte</h2>
-            
-            <!-- Bouton Google -->
-            <button class="w-full bg-white hover:bg-slate-100 text-slate-900 font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-3 transition text-sm shadow-md mb-6">
-                <svg class="w-5 h-5" viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-                </svg>
-                S'inscrire avec Google
-            </button>
-
-            <div class="relative flex py-2 items-center mb-6">
-                <div class="flex-grow border-t border-slate-800"></div>
-                <span class="flex-shrink mx-4 text-xs font-semibold text-slate-500 uppercase">Ou avec votre e-mail</span>
-                <div class="flex-grow border-t border-slate-800"></div>
-            </div>
-
-            <form class="space-y-4" onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Nom complet ou Pseudo</label>
-                    <input type="text" required placeholder="Amina Creator" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Adresse E-mail</label>
-                    <input type="email" required placeholder="nom@exemple.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Mot de passe</label>
-                    <input type="password" required placeholder="••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
-                </div>
-                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-purple-600/25 transition text-sm">
-                    Lancer mes 14 jours gratuits
-                </button>
-            </form>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+            <a href="#register" class="bg-purple-600 hover:bg-purple-500 text-white font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-purple-600/25 transition">
+                Tester gratuitement (14 jours)
+            </a>
+            <a href="dashboard.html" class="bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold text-base px-8 py-4 rounded-xl border border-slate-800 transition">
+                Voir la démo Dashboard
+            </a>
         </div>
     </section>
 
-    <!-- Exemples & Previews -->
-    <section id="previews" class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-900">
+    <!-- Value Props / Features -->
+    <section id="features" class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-900">
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <h2 class="text-3xl font-extrabold text-white">Découvrez l'expérience CollaBiz</h2>
-            <p class="text-slate-400 mt-3">Un aperçu de vos futurs outils de travail.</p>
+            <h2 class="text-3xl font-extrabold text-white">Pourquoi chaque créateur a besoin de CollaBiz ?</h2>
+            <p class="text-slate-400 mt-3">Gérez votre influence comme une véritable entreprise.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl hover:border-purple-500/40 transition">
+                <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">📩</div>
+                <h3 class="text-xl font-bold text-white mb-3">Zéro Spam & Inbox Filtrée</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Recevez uniquement des demandes qualifiées. Les marques et agences remplissent un formulaire structuré avec leur budget, dates et détails du projet.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl hover:border-fuchsia-500/40 transition">
+                <div class="w-12 h-12 bg-fuchsia-500/10 text-fuchsia-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">🎉</div>
+                <h3 class="text-xl font-bold text-white mb-3">Invitations Événements VIP</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Un canal dédié pour recevoir les invitations aux soirées de lancement, avant-premières et événements de marques sans rater aucune opportunité.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl hover:border-pink-500/40 transition">
+                <div class="w-12 h-12 bg-pink-500/10 text-pink-400 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">💼</div>
+                <h3 class="text-xl font-bold text-white mb-3">Image de Marque Crédible</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Remplacez votre e-mail de contact par un lien interactif élégant (`collabiz.com/votre-nom`) qui renvoie une image professionnelle et structurée.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-900">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl font-extrabold text-white">Comment ça marche ?</h2>
+            <p class="text-slate-400 mt-3">3 étapes simples pour professionnaliser vos collaborations.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="space-y-4">
+                <div class="w-10 h-10 bg-purple-600 text-white rounded-full font-black flex items-center justify-center mx-auto text-lg">1</div>
+                <h4 class="text-lg font-bold text-white">Créez votre compte</h4>
+                <p class="text-slate-400 text-sm">Obtenez votre accès et profitez de 14 jours gratuits.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="w-10 h-10 bg-purple-600 text-white rounded-full font-black flex items-center justify-center mx-auto text-lg">2</div>
+                <h4 class="text-lg font-bold text-white">Placez le lien dans votre Bio</h4>
+                <p class="text-slate-400 text-sm">Ajoutez-le sur Instagram, TikTok ou YouTube à la place de votre email.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="w-10 h-10 bg-purple-600 text-white rounded-full font-black flex items-center justify-center mx-auto text-lg">3</div>
+                <h4 class="text-lg font-bold text-white">Gérez depuis votre Dashboard</h4>
+                <p class="text-slate-400 text-sm">Consultez, acceptez ou refusez les demandes directement dans votre Inbox CollaBiz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Aperçus (Media Kit & Dashboard) -->
+    <section id="previews" class="max-w-7xl mx-auto px-6 py-16 border-t border-slate-900">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-3xl font-extrabold text-white">Aperçu de la plateforme CollaBiz</h2>
+            <p class="text-slate-400 mt-2">Découvrez comment s'affiche votre profil et votre espace membre.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Media Kit Preview -->
+            <!-- Media Kit -->
             <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
-                <h3 class="text-lg font-bold text-purple-300 mb-4 flex items-center gap-2">
-                    📄 Exemple de Media Kit
-                </h3>
+                <h3 class="text-lg font-bold text-purple-400 mb-4 flex items-center gap-2">📄 Exemples de Media Kit</h3>
                 <div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
-                    <!-- Remplacez le src par l'image de votre Media Kit -->
-                    <img src="https://via.placeholder.com/600x380/0F172A/8B5CF6?text=Apercu+Media+Kit" alt="Exemple Media Kit" class="w-full h-auto object-cover hover:scale-105 transition duration-300">
+                    <img src="https://via.placeholder.com/600x380/0F172A/8B5CF6?text=Exemple+Media+Kit" alt="Exemple Media Kit" class="w-full h-auto object-cover hover:scale-105 transition duration-300">
                 </div>
             </div>
 
-            <!-- Dashboard Preview -->
+            <!-- Espace Membre -->
             <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
-                <h3 class="text-lg font-bold text-purple-300 mb-4 flex items-center gap-2">
-                    💻 Espace Membre CollaBiz
-                </h3>
+                <h3 class="text-lg font-bold text-purple-400 mb-4 flex items-center gap-2">💻 Compte المشترك (Dashboard)</h3>
                 <div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
-                    <!-- Remplacez le src par l'image de votre Dashboard -->
-                    <img src="https://via.placeholder.com/600x380/0F172A/7C3AED?text=Apercu+Compte+Utilisateur" alt="Aperçu Compte" class="w-full h-auto object-cover hover:scale-105 transition duration-300">
+                    <img src="https://via.placeholder.com/600x380/0F172A/7C3AED?text=Apercu+Compte+Utilisateur" alt="Dashboard Subscriber" class="w-full h-auto object-cover hover:scale-105 transition duration-300">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Registration Form Section -->
+    <section id="register" class="max-w-4xl mx-auto px-6 py-20">
+        <div class="bg-gradient-to-tr from-purple-950/50 via-slate-900 to-fuchsia-950/50 border border-purple-500/30 rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-2xl">
+            <h2 class="text-3xl font-extrabold text-white">Prêt(e) à passer au niveau supérieur ?</h2>
+            <p class="text-slate-300 text-sm max-w-xl mx-auto">Rejoignez la nouvelle génération d'influenceurs et de créateurs de contenu qui gèrent leur activité avec rigueur.</p>
+            
+            <div class="max-w-md mx-auto space-y-4 pt-4">
+                <!-- Google Sign In -->
+                <button class="w-full bg-white hover:bg-slate-100 text-slate-900 font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-3 transition text-sm shadow-md">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                    S'inscrire avec Google
+                </button>
+
+                <div class="relative flex py-1 items-center">
+                    <div class="flex-grow border-t border-slate-800"></div>
+                    <span class="flex-shrink mx-4 text-xs font-semibold text-slate-500 uppercase">Ou par email</span>
+                    <div class="flex-grow border-t border-slate-800"></div>
+                </div>
+
+                <form class="space-y-4 text-left" onsubmit="event.preventDefault(); alert('Bienvenue sur CollaBiz ! Votre essai de 14 jours a commencé.'); window.location.href='dashboard.html';">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Nom complet ou Pseudo</label>
+                        <input type="text" required placeholder="ex. Amina Creator" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Adresse E-mail</label>
+                        <input type="email" required placeholder="votrename@gmail.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Lien de votre profil principal (Instagram / TikTok)</label>
+                        <input type="url" required placeholder="https://instagram.com/..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-purple-600/30 transition text-sm">
+                        Commencer 14 jours gratuits
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-900 bg-slate-950/50 py-12">
+    <footer class="border-t border-slate-900 bg-slate-950/80 py-12">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <!-- Navigation Links -->
-            <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-400">
-                <a href="#faq" id="faq" class="hover:text-purple-400 transition">FAQs</a>
-                <a href="#privacy" class="hover:text-purple-400 transition">Politique de confidentialité</a>
-                <a href="#terms" class="hover:text-purple-400 transition">Conditions d'utilisation</a>
+            <!-- Footer Links -->
+            <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-slate-400">
+                <a href="#faq" class="hover:text-purple-400 transition">FAQs</a>
+                <a href="#privacy" class="hover:text-purple-400 transition">Privacy Policy</a>
+                <a href="#terms" class="hover:text-purple-400 transition">Terms & Conditions</a>
                 <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
             </div>
 
-            <!-- Language Switcher -->
+            <!-- Language Chooser -->
             <div class="flex items-center gap-2">
-                <span class="text-xs text-slate-500">Langue :</span>
-                <select class="bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-purple-500">
+                <span class="text-xs text-slate-500 font-medium">Langue :</span>
+                <select class="bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-purple-500 font-medium">
                     <option value="fr">Français</option>
                     <option value="en">English</option>
                     <option value="ar">العربية</option>
